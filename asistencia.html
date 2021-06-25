@@ -45,7 +45,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            
+
 
             <li class="nav-item">
                 <a class="nav-link" href="asistencia.html">
@@ -65,135 +65,208 @@
                     <span>Tareas</span></a>
             </li>
 
-           
+
         </ul>
-                
-                <!-- notas -->
-                
 
-                <!-- contenedor a modificar -->
-                <div class="container-fluid">
+        <!-- notas -->
 
-                    
-                    <h1 class="h3 mb-2 text-gray-800">LISTA DE ASISTENCIA CODERS F5</h1>
-                   
-                    
 
-                    
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Asistencia firmada</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr class="encabezado">
-                                           
-                                            <th colspan="2">LUNES</th>
-                                            <th colspan="2">MARTES</th>
-                                            <th colspan="2">MIERCOLES</th>
-                                            <th colspan="2">JUEVES</th>
-                                            <th colspan="2">VIERNES</th>                                           
-                                        </tr>
-                                        
-                                    </thead>
+        <!-- contenedor a modificar -->
+        <div class="container-fluid">
+
+
+            <br>
+            <h1 class="h3 mb-2 text-gray-800"><b> LISTA DE ASISTENCIA CODERS F5</b></h1>
+
+
+
+
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Asistencia firmada</h6>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr class="encabezado">
+
+                                    <th colspan="2">LUNES</th>
+                                    <th colspan="2">MARTES</th>
+                                    <th colspan="2">MIERCOLES</th>
+                                    <th colspan="2">JUEVES</th>
+                                    <th colspan="2">VIERNES</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody class="dias">
+                                <tr>
+
+                                    <td>entrada</td>
+                                    <td>salida</td>
+                                    <td>entrada</td>
+                                    <td>salida</td>
+                                    <td>entrada</td>
+                                    <td>salida</td>
+                                    <td>entrada</td>
+                                    <td>salida</td>
+                                    <td>entrada</td>
+                                    <td>salida</td>
+
+
+                                </tr>
+
+
+                                <div class="container2">
+                                    <div class="principal">
+                                        <div class="wrap">
+                                            <form class="formulario" action="">
+                                                <input type="button" class="boton" id="btn-agregar"
+                                                    value="Agregar Nota">
+                                                <input type="text" id="tareaInput" placeholder="Agrega tu nota">
+                                                
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div class="tareas">
+                                        <div class="wrap">
+                                            <ul class="lista" id="lista">
+                                                <li><a href="#">1 Lorem ipsum dolor sit amet.</a></li>
+                                                <li><a href="#">2 Lorem ipsum dolor sit amet.</a></li>
+                                                <li><a href="#">3 Lorem ipsum dolor sit amet.</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+                                    <section class="herramientas_busqueda">
+                                        <br><label for="NOMBRE"><b> SELECCIONE SU NOMBRE</b></label><br>
+
+                                        <select name="CODER" id="">
+
+                                            <option value="ENTRADA">...</option>
+                                            <option value="ENTRADA">ABALOS AVENTURA, MARIA URBINA</option>
+                                            <option value="ENTRADA">ALVAREZ RODRIGUEZ, AURORA</option>
+                                            <option value="ENTRADA">BATALLAS MINDA, DERIAN YERAY</option>
+                                            <option value="ENTRADA">CABEZA BERJILLOS, JOAQUIN</option>
+                                            <option value="ENTRADA">DELGADO GALLARDO, OSCAR</option>
+                                            <option value="ENTRADA">DOMINGUEZ GARCIA, GUILLERMO</option>
+                                            <option value="ENTRADA">ESCOTO, ROBERTO CARLOS</option>
+                                            <option value="ENTRADA">ESTRADA DELGADO, ALICIA</option>
+                                            <option value="ENTRADA">GAMERO CALZADO, ROSARIO</option>
+                                            <option value="ENTRADA">GARRIDO CABALLERO, JOSE MANUEL</option>
+                                            <option value="ENTRADA">GONZALEZ GARRIDO, DANIEL</option>
+                                            <option value="ENTRADA">HOLLIMAN PINA, TADEO BENJAMIN</option>
+                                            <option value="ENTRADA">IBRAHIM HASAN KAKI, MOHAMED</option>
+                                            <option value="ENTRADA">IZQUIERDO IZQUIERDO, MATIAS IVAN</option>
+                                            <option value="ENTRADA">MEJIA TORREZ, JOSE ENRIQUE</option>
+                                            <option value="ENTRADA">MORA GARCIA, MANUEL IGOR</option>
+                                            <option value="ENTRADA">MORENO GABARRI, FRANCISCO JAVIER</option>
+                                            <option value="ENTRADA">NAVARRO ALMUEDO, PABLO</option>
+                                            <option value="ENTRADA">RUEDA MOYA, MANUEL FRANCISCO</option>
+                                            <option value="ENTRADA">SOSCUE VILLAMUEZ, AIDA XIMENA</option>
+                                            <option value="ENTRADA">VIZARRA VIZARRA, ANTONIO</option>
+                                            <option value="ENTRADA">RUBEN</option>
+                                            <option value="ENTRADA">MANUEL</option>
+
+
+                                        </select>
+                                    </section>
+
+
+                                </div>
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <h6><b> ULTIMAS FIRMAS REGISTRADAS</b></h6>
+                                <tr class="encabezado">
+
+                                    <th colspan="2">LUNES</th>
+                                    <th colspan="2">MARTES</th>
+                                    <th colspan="2">MIERCOLES</th>
+                                    <th colspan="2">JUEVES</th>
                                     
-                                    <tbody class="dias">
-                                        <tr>
-                                            
-                                            <td>entrada</td>
-                                            <td>salida</td>
-                                            <td>entrada</td>
-                                            <td>salida</td>
-                                            <td>entrada</td>
-                                            <td>salida</td>
-                                            <td>entrada</td>
-                                            <td>salida</td>
-                                            <td>entrada</td>
-                                            <td>salida</td>
-                                            
-                                            
-                                        </tr>
+                                </tr>
 
-                                            <!-- notas -->
-<div class="container2">
-    <div class="principal">
-        <div class="wrap">
-            <form class="formulario" action="">
-                <input type="text" id="tareaInput" placeholder="Agrega tu nota">
-                <input type="button" class="boton" id="btn-agregar" value="Agregar Nota">
-            </form>
-        </div>
-    </div>
+                            </thead>
 
-    <div class="tareas">
-        <div class="wrap">
-            <ul class="lista" id="lista">
-                <li><a href="#">1 Lorem ipsum dolor sit amet.</a></li>
-                <li><a href="#">2 Lorem ipsum dolor sit amet.</a></li>
-                <li><a href="#">3 Lorem ipsum dolor sit amet.</a></li>
-            </ul>
-        </div>
-    </div>
+                           
+                        </table>
 
 
-    <section class="herramientas_busqueda">
-        <br><label for="NOMBRE">SELECCIONE SU NOMBRE</label><br>
-        
-    <select name="CODER" id="">
-    
-    <option value="ENTRADA">...</option>
-    <option value="ENTRADA">ABALOS AVENTURA, MARIA URBINA</option>
-    <option value="ENTRADA">ALVAREZ RODRIGUEZ, AURORA</option>
-    <option value="ENTRADA">BATALLAS MINDA, DERIAN YERAY</option>
-    <option value="ENTRADA">CABEZA BERJILLOS, JOAQUIN</option>
-    <option value="ENTRADA">DELGADO GALLARDO, OSCAR</option>
-    <option value="ENTRADA">DOMINGUEZ GARCIA, GUILLERMO</option>
-    <option value="ENTRADA">ESCOTO, ROBERTO CARLOS</option>
-    <option value="ENTRADA">ESTRADA DELGADO, ALICIA</option>
-    <option value="ENTRADA">GAMERO CALZADO, ROSARIO</option>
-    <option value="ENTRADA">GARRIDO CABALLERO, JOSE MANUEL</option>
-    <option value="ENTRADA">GONZALEZ GARRIDO, DANIEL</option>
-    <option value="ENTRADA">HOLLIMAN PINA, TADEO BENJAMIN</option>
-    <option value="ENTRADA">IBRAHIM HASAN KAKI, MOHAMED</option>
-    <option value="ENTRADA">IZQUIERDO IZQUIERDO, MATIAS IVAN</option>
-    <option value="ENTRADA">MEJIA TORREZ, JOSE ENRIQUE</option>
-    <option value="ENTRADA">MORA GARCIA, MANUEL IGOR</option>
-    <option value="ENTRADA">MORENO GABARRI, FRANCISCO JAVIER</option>
-    <option value="ENTRADA">NAVARRO ALMUEDO, PABLO</option>
-    <option value="ENTRADA">RUEDA MOYA, MANUEL FRANCISCO</option>
-    <option value="ENTRADA">SOSCUE VILLAMUEZ, AIDA XIMENA</option>
-    <option value="ENTRADA">VIZARRA VIZARRA, ANTONIO</option>
-    <option value="ENTRADA">RUBEN</option>
-    <option value="ENTRADA">MANUEL</option>
-    
-    
-    </select>
-    </section>
-   
-
-</div>                                  
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-        </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; by Roberto Carlos 2021</span>
                     </div>
                 </div>
-            </footer>
-            <!-- End of Footer -->
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <h6><b> TAREAS PENDIENTES</b></h6>
+                                <tr class="encabezado">
+
+                                    <th colspan="2">LUNES</th>
+                                    <th colspan="2">MARTES</th>
+                                    <th colspan="2">MIERCOLES</th>
+                                    <th colspan="2">JUEVES</th>
+                                    
+                                </tr>
+
+                            </thead>
+
+                           
+                        </table>
+
+
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <h6><b> PILDORAS PENDIENTES</b></h6>
+                                <tr class="encabezado">
+
+                                    <th colspan="2">LUNES</th>
+                                    <th colspan="2">MARTES</th>
+                                    <th colspan="2">MIERCOLES</th>
+                                    <th colspan="2">JUEVES</th>
+                                    <th colspan="2">VIERNES</th>
+                                </tr>
+
+                            </thead>
+
+                        
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; by Roberto Carlos 2021</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
 
 
     <!-- Scroll to Top Button-->
@@ -201,7 +274,7 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-    
+
     <script src="assets/js/main.js"></script>
 
 </body>

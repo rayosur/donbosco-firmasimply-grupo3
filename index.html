@@ -30,6 +30,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -47,7 +48,7 @@
             <!-- Nav Item - Dashboard -->
 
             <li class="nav-item">
-                <a class="nav-link" href="asistencia.html">
+                <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Asistencia</span></a>
             </li>
@@ -66,39 +67,67 @@
 
         </ul>
 
-        
+
         <!-- contenedor a modificar -->
+
         <div class="container-fluid">
 
             <br>
             <h1 class="h3 mb-2 text-gray-800"><b> LISTA DE ASISTENCIA CODERS F5</b></h1>
 
-
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Asistencia firmada</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">ASISTENCIA FIRMADA</h6>
                 </div>
 
                 <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
-                                <h6><b> ULTIMAS FIRMAS REGISTRADAS</b></h6>
-                                <tr class="encabezado">
 
-                                    <th>FIRMAR</th>
-                                    <th>FIRMAR</th>
-                                    <th>FIRMAR</th>
-                                    <th>FIRMAR</th>
 
-                                </tr>
+                            <p>Comentario: <br><textarea id="nota" name="comentario"></textarea></p>
+                            <button id="buttonFirmar" value="firmar">Firmar</button>
+
+                            <tr class="encabezado">
+
+                                <th colspan="2">FIRMAR</th>
+                                <th colspan="2">FIRMAR</th>
+                                <th colspan="2">FIRMAR</th>
+                                <th colspan="2">FIRMAR</th>
+                                <th colspan="2">FIRMAR</th>
+
+                            </tr>
+
+                            <td id="entrada">ENTRADA</td>
+                            <td id="salida">SALIDA</td>
+                            <td id="entrada">ENTRADA</td>
+                            <td id="salida">SALIDA</td>
+                            <td id="entrada">ENTRADA</td>
+                            <td id="salida">SALIDA</td>
+                            <td id="entrada">ENTRADA</td>
+                            <td id="salida">SALIDA</td>
+                            <td id="entrada">ENTRADA</td>
+                            <td id="salida">SALIDA</td>
+
+
 
                         </table>
+
+
 
                     </div>
                 </div>
 
                 <div class="card-body">
+
+                    <h6><b> ULTIMAS FIRMAS REGISTRADAS</b></h6>
+                    <ul>
+                        <li>tarea 1</li>
+                        <li>tarea 2</li>
+                        <li>tarea 3</li>
+                        <li>tarea 4</li>
+
+                    </ul>
 
 
                     <h6><b> TAREAS PENDIENTES</b></h6>
@@ -149,8 +178,10 @@
         <i class="fas fa-angle-up"></i>
     </a>
 
-
-    <script src="assets/js/main.js"></script>
+    <script type="module" src="assets/firmasimply/login.js"></script>
+    <script type="module" src="assets/firmasimply/logout.js"></script>
+    <script type="module" src="assets/firmasimply/index.js"></script>
+    <script type="module" src="assets/firmasimply/Modules/Asistencia.js"></script>
 
 </body>
 

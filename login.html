@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/login.css">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <hgroup>
+        <h1>Bienvenido</h1>
+        <h3>Iniciar Sesión</h3>
+    </hgroup>
+    <form id="formularioLogin">
+        <div class="group">
+            <input id="usuario" name="email" type="email" required><span class="highlight"><span class="bar"></span>
+                <label>Email</label>
+        </div>
+        <div class="group">
+            <input id="password" name="password" type="password" required><span class="highlight"></span><span
+                class="bar"></span>
+            <label>Contraseña</label>
+        </div>
+        <button type="submit" class="button buttonBlue">Entrar
+            <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+        </button>
+        <div>
+            <p id="mensaje">Cargando..espere porfavor</p>
+        </div>
+    </form>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="/assets/js/firmasimply/app.js"></script>
+    <script type="module" src="/assets/js/firmasimply/login.js"></script>
+</body>
+
+</html>

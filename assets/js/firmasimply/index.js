@@ -8,7 +8,7 @@ import Asistencia from './Modules/Asistencia.js';
 const list = document.getElementById('lista_firmas');
 async function getListadoFirmas() {
   console.log('hola');
-  let res = await Asistencia.getListadoFirmas();
+  let res = await Firma.getListadoFirmas();
   for (var i = 0; i < res.length; i++) {
     console.log(res[i].name);
     list.innerHTML += `<tr>

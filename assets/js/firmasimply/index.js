@@ -7,34 +7,59 @@ import { firmar } from './Modules/API/llamadasApi.js';
 
 
 // Tu Código
-let crearEntrada = document.getElementById("comenta")
+let botonEntrada = document.getElementById("buttonFirmar")
 console.log('funciona?');
-crearEntrada.addEventListener("submit", async (e) => {
+botonEntrada.addEventListener("click", async (e) => {
+  e.preventDefault()
+let lista = document.getElementById('lista_firmas')
+lista.innerHTML+='<li>Entrada</li>'
 
- crearEntrada = document.getElementById("buttonFirmar").value
+let firma = {
+	user_id: Auth.getCoder().id,
+	nota: 'texto test',
+	estado: 1 // 1 para entrada, 0 para salida
+};
+Asistencia.firmar(firma);
 
 
-
-  await firmar.crearEntrada(firmar);
-  window.location.reload();
+  
 });
 
-getListadoFirmas();
+// Consultar el número de firmas de hoy
+let lista_firmas= await Asistencia.getlistadoFirmas();
+console.log(lista_firmas)
 
 // Funcionalidad de Firmar
 
 
 
-let firmar = document.getElementById("comenta")
-botonFirmar.addEventListener("submit", async (e) => {
-  e.preventDefault();
+let botonSalida = document.getElementById("buttonFirmar-2")
+botonSalida.addEventListener("click", async (e) => {
+  e.preventDefault()
+  let lista = document.getElementById('lista_firmas')
+lista.innerHTML+='<li>Salida</li>'
+  
   console.log('probando');
-  let comentario = document.getElementById("comentario").value
-
-  await Asistencia.firmar(comentario);
-  window.location.reload();
+  let firma = {
+    user_id: Auth.getCoder().id,
+    nota: 'texto test',
+    estado: 0 // 1 para entrada, 0 para salida
+  };
+  Asistencia.firmar(firma);
+  
+  
+  
 });
+// Consultar el número de firmas de hoy
+Asistencia.getNumFirmasHoy();
+  
 
 // Funcionalidad mostrar Listado Tareas
+
+let mostrarTareas= await Tarea.getListadoTareas();
+console.log(mostrarTareas)
+
+let tareasPendientes=mostrarTareas.filter(a => { a.estado == 0 });
+console.log(tareasPendientes)
 
 // Funcionalidad mostrar Listado Píldorasconst input = document.querySelector("input");

@@ -85,10 +85,50 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
 
-                            <p>Comentario: <br><textarea id="nota" name="comentario"></textarea></p>
-                            <button id="buttonFirmar" value="firmar">Firmar</button>
 
-                            <tr class="encabezado">
+                            <div class="form-group">
+                                <label for="fecha">FECHA</label>
+                                <input type="datetime-local" id="fecha" name="fechaHora" required></p>
+                                <!-- <select name="department" id="selector" class="form-control selectpicker">
+    
+                                    <option id="pendiente" value="0">
+                                        Pendiente</option>
+    
+                                    <option id="presentado" value="1">
+                                        Presentada</option>
+    
+                                </select>-->
+
+
+
+                                <h6>COMENTARIOS</h6>
+                                <div class="search">
+                                    <form id="comenta">
+                                        <input type="text" placeholder="Agregar Comentario...">
+                                        <button id="buttonFirmar" style="width: 110px; height: 40px;"
+                                            value="firmar">ENTRADA</button>
+
+                                        <button id="buttonFirmar-2" style="width: 110px; height: 40px;"
+                                            value="firmar">SALIDA</button>
+
+                                    </form>
+                                </div>
+                                <div class="li-container">
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                                <div class="empty">
+                                    <p>No tienes tareas pendientes.</p>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                            <!-- <tr class="encabezado">
 
                                 <th colspan="2">FIRMAR</th>
                                 <th colspan="2">FIRMAR</th>
@@ -109,7 +149,7 @@
                             <td id="entrada">ENTRADA</td>
                             <td id="salida">SALIDA</td>
 
-
+ -->
 
                         </table>
 
@@ -121,7 +161,7 @@
                 <div class="card-body">
 
                     <h6><b> ULTIMAS FIRMAS REGISTRADAS</b></h6>
-                    <ul>
+                    <ul id="lista_firmas">
                         <li>tarea 1</li>
                         <li>tarea 2</li>
                         <li>tarea 3</li>
@@ -177,11 +217,14 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+    <!-- <script  src="assets/firmasimply/login.js"></script> -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="assets/js/firmasimply/index.js"></script>
 
-    <script type="module" src="assets/firmasimply/login.js"></script>
-    <script type="module" src="assets/firmasimply/logout.js"></script>
-    <script type="module" src="assets/firmasimply/index.js"></script>
-    <script type="module" src="assets/firmasimply/Modules/Asistencia.js"></script>
+    <script type="module" src="/assets/js/firmasimply/app.js"></script>
+    <!-- <script  src="assets/firmasimply/logout.js"></script> -->
+
+
 
 </body>
 

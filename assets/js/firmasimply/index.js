@@ -1,50 +1,39 @@
 import Auth from './Modules/Auth/Auth.js';
 import Asistencia from './Modules/Asistencia.js';
-
+import Tarea from './Modules/Tarea.js';
+import Pildora from './Modules/Pildora.js';
+import { firmar } from './Modules/API/llamadasApi.js';
 
 
 
 // Tu Código
-const list = document.getElementById('lista_firmas');
-async function getListadoFirmas() {
-  console.log('hola');
-  let res = await Firma.getListadoFirmas();
-  for (var i = 0; i < res.length; i++) {
-    console.log(res[i].name);
-    list.innerHTML += `<tr>
-        <td>
-          ${res[i].nombre}
-        </td>
-        <td>
-          ${res[i].apellido}
-        </td>
-      </tr>`;
-  }
+let crearEntrada = document.getElementById("comenta")
+console.log('funciona?');
+crearEntrada.addEventListener("submit", async (e) => {
 
-}
+ crearEntrada = document.getElementById("buttonFirmar").value
+
+
+
+  await firmar.crearEntrada(firmar);
+  window.location.reload();
+});
 
 getListadoFirmas();
 
-
 // Funcionalidad de Firmar
-let botonFirmaEntrada = document.getElementById("buttonFirmar")
-botonFirmaEntrada.addEventListener("click", async (e) => {
-  alert("has firmado entrada")
 
 
-  await Firma.crearEntrada(entrada);
+
+let firmar = document.getElementById("comenta")
+botonFirmar.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  console.log('probando');
+  let comentario = document.getElementById("comentario").value
+
+  await Asistencia.firmar(comentario);
   window.location.reload();
 });
-
-let botonFirmaSalida = document.getElementById("buttonFirmar")
-botonFirmaSalida.addEventListener("click", async (e) => {
-  alert("has firmado salida")
-
-  await Firma.crearSalida(salida);
-  window.location.reload();
-});
-
-
 
 // Funcionalidad mostrar Listado Tareas
 

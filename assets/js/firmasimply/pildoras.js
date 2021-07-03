@@ -57,13 +57,12 @@ botonCrear.addEventListener("submit", async (e) => {
 
 async function borrarPildora(p) {  
   e.preventDefault();
-  
+  let eliminar =document.querySelectorAll(value)
 
-  await value.Pildora.borrarPildora()
   
+  await Pildora.borrarPildora().value
 }
 
-let eliminar =document.querySelectorAll(value)
 
  //eliminar.addEventListener("click",borrarPildora(idPildora))
 

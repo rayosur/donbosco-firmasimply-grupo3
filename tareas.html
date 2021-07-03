@@ -1,18 +1,160 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FirmaSimply</title>
-</head>
-<body>
-    <h1>Tareas</h1>
+<html lang="es">
 
-    <!-- IMPORTAR LOS SIGUIENTE JS EN TU PÁGINA TAREAS (tareas.html) -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tabla de Asistencia</title>
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">DON BOSCO<sup>F5</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Asistencia</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Pildoras.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Pildoras</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Tareas.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Tareas</span></a>
+            </li>
+
+        </ul>
+
+
+        <!-- contenedor a modificar -->
+
+        <div class="container-fluid">
+            <br>
+            <h6><b>TAREAS</b></h6>
+            <div id="flexbox">
+                <div id="leftside">
+                    <form id="book-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" class="form-control" />
+                        </div>
+                        <div class="form-group">
+                            <label for="categoria">Categoria</label>
+                            <select id="categoria" name="categoria" class="form-control">
+                        <option >    </option>
+                        <option >Estudiante</option>
+                        <option >Tareas</option>
+                        
+                      </select>
+                            <!-- <input type="text" id="Categoria" class="form-control" /> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="descripcion">Descripcion</label>
+
+                            <textarea id="descripcion" name="descripcion" placeholder="Escribe algo.." class="form-control"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="editsubmit">Agregar Tareas</button>
+                    </form>
+
+
+
+
+                    <table class="table table-striped mt-5" id="here">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Categoria</th>
+                                <th>Descripcion</th>
+                                <th>Fecha</th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody id="book-list"></tbody>
+                    </table>
+
+                </div>
+
+                <div id="Estadísticas">
+
+
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    </div>
+    <!-- End of Main Content -->
+
+
+
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+    <!-- <script  src="assets/firmasimply/login.js"></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="assets/js/firmasimply/index.js"></script>
+
     <script type="module" src="/assets/js/firmasimply/app.js"></script>
-    <script type="module" src="/assets/js/firmasimply/logout.js"></script>
-    <script type="module" src="/assets/js/firmasimply/tareas.js"></script>
+    <!-- <script  src="assets/firmasimply/logout.js"></script> -->
+
+
+
 </body>
+
 </html>

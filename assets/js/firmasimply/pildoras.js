@@ -87,7 +87,7 @@ function deletePildora() {
           console.log(e.target.parentElement.parentElement)
           console.log(e.target.getAttribute("value"))
       }
-      alert('Pildora borrada', 'success');
+      alert('Borrando Pildora', 'success');
   });
 
 }

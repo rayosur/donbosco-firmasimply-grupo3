@@ -33,7 +33,8 @@ botonEntrada.addEventListener("click", async (e) => {
   Asistencia.firmar(firma);
   // Refrescar el listado de firmas
   consultarListadoFirmas();
-
+  getListadoPildoras()
+  console.log(getListadoPildoras()) 
 });
 
 //consultar el listado de Firmas de Entrada
@@ -57,4 +58,6 @@ async function consultarListadoFirmas2() {
 
 // // Consultar el número de firmas de hoy
  Asistencia.getNumFirmasHoy();
+
+ //consultar ultimas Pildoras
  

@@ -3,12 +3,12 @@ import Auth from './Modules/Auth/Auth.js';
 import Pildora from './Modules/Pildora.js';
 //Lista de Píldoras //Await es como espera
 
-const list = document.getElementById('book-list');
+const list = document.getElementById('list-pildoras');
 async function getListadoPildoras() {
   console.log('hola');
   let res = await Pildora.getListadoPildoras();
   for (var i = 0; i < res.length; i++) {
-    console.log(res[i].name);
+    //console.log(res[i].name);
     list.innerHTML += `<tr>
         <td>
           ${res[i].nombre}
@@ -20,24 +20,26 @@ async function getListadoPildoras() {
         ${res[i].fecha_presentacion}
         </td>
         <td>
-        <a href="#" id="borrar"  value="${res[i].id}" class="btn btn-danger btn-sm delete">X</a>
+        <a id="${res[i].id}" class="btn btn-danger btn-sm delete">X</a>
+        </td>
+        <td>
+        <input type="radio"  id="${res[i].id}a" class="casilla" />Presentado
         </td>
       </tr>`;
-      
-  }
-console.log(res)
-}
 
+    console.log(res)
+  }
+}
 
 
 getListadoPildoras();
 
 // Funcionalidad crear píldora
-//
 
-let botonCrear = document.getElementById("book-form")
+let botonCrear = document.getElementById("form-pildora")
 botonCrear.addEventListener("submit", async (e) => {
   e.preventDefault();
+  console.log("estoy en funcion crear pildora")
 
   let nombre = document.getElementById("nombre").value
   let descripcion = document.getElementById("descripcion").value
@@ -53,55 +55,25 @@ botonCrear.addEventListener("submit", async (e) => {
   await Pildora.crearPildora(pildora);
   window.location.reload();
 });
+
 // Funcionalidad borrar píldora
-
-async function borrarPildora(p) {  
+document.getElementById('list-pildoras').addEventListener('click', borrarPildoras)
+async function borrarPildoras(e) {
+  // target detectar el objetivo 
+  //classlist nos devuelve todas las claces y contains comprueba dentro de esta lista de clases esta la clase deleter
+  if (e.target.classList.contains('delete')) {
+    await Pildora.borrarPildora(e.target.id);
+  }
+  window.location.reload();
+  alert("ha sido borrado")
+}
+//marcar pildora presentada o no.
+document.getElementById('list-presentas').addEventListener('click', marcarPildora)
+async function marcarPildora(e) {
   e.preventDefault();
-  let eliminar =document.querySelectorAll(value)
-
-  
-  await Pildora.borrarPildora().value
+  console.log(1);
+  if (e.target.classList.contains('casilla')) {
+    await Pildora.marcarPildora(e.target.id);
+  }
+  window.location.reload();
 }
-
-
- //eliminar.addEventListener("click",borrarPildora(idPildora))
-
-
-
-// Funcionalidad marcar una píldora como presentada o pendiente
-//
-async function marcarPildora() {
-  let presentada = document.getElementById("presentado").value
-  let pendiente = document.getElementById("pendiente").value
-  let idPildora = 2;
-  let data = { estado: 1 }; // 1 presentada, 0 pendiente
-  Tarea.marcarPildora(data, idPildora);
-}
-
-function deletePildora() {
-  document.querySelector('#book-list').addEventListener('click', (e) => {
-     e.preventDefault()
-      removePildora(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
-      if (e.target.classList.contains('delete')) {
-          e.target.parentElement.parentElement.remove();
-          console.log(e.target.parentElement.parentElement)
-          console.log(e.target.getAttribute("value"))
-      }
-      alert('Borrando Pildora', 'success');
-  });
-
-}
-async function removePildora(id) {
-  let borrar = await Pildora.getListadoPildoras();
- 
-  borrar.forEach((pico, index) => {
-      if (pico.id === id) {
-          
-          console.log(deletBook.splice(index, 1))
-          console.log(id)
-      }
-  });
-  
-  Pildora.borrarPildora(id)
-}
-deletePildora()

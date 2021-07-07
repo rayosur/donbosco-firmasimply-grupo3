@@ -8,9 +8,9 @@ let infoCoder = Auth.getCoder()
 
 
 async function getListadoTareas() {
-
+    console.log(await Tarea.getListadoTareas());
 }
-
+getListadoTareas();
 
 // Event: Add a Book
 document.querySelector('#editsubmit').addEventListener('click', crearTarea, false)
@@ -28,6 +28,7 @@ async function crearTarea(e) {
 
     let tarea = {
         titulo: nombre,
+        categoria:categoria,
         descripcion: descripcion, //'Lorem Ipsum',
         fecha: fecha,
         estado: 0, // 0 pendiente, 1 completada

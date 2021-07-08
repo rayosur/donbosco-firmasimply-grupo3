@@ -2,7 +2,7 @@ import Auth from './Modules/Auth/Auth.js';
 import Asistencia from './Modules/Asistencia.js';
 import Tarea from './Modules/Tarea.js';
 import Pildora from './Modules/Pildora.js';
-import { firmar, listadoFirmas, listadoPildoras } from './Modules/API/llamadasApi.js';
+import { firmar, listadoFirmas, listadoPildoras,listadoTareas } from './Modules/API/llamadasApi.js';
 
 let botonSalida = document.getElementById("buttonFirmar-2")
 botonSalida.addEventListener("click", async (e) => {
@@ -81,6 +81,7 @@ async function consultarListadoFirmas2() {
          <td>
          <input type="radio"  id="${res[i].id}a" class="casilla" />Presentado
          </td>
+         
        </tr>`;
  
      console.log(res)
@@ -90,9 +91,32 @@ async function consultarListadoFirmas2() {
   
  //consultar tareas
  async function ultimasTareas() {
-  let listado1 = document.getElementById("lista_tareasP");
- let listaTareas = await getListadoTareas();
- listado1.innerHTML += `<li> ${"Tareas: " + listaTareas.created_at} </li>`;
-}
-ultimasTareas();
+  let listado = document.getElementById("tareas-P")
+  let res = await Tarea.getListadoTareas();
   
+  for (var i = 0; i < res.length; i++) {
+    console.log(res[i].categoria);
+    listado.innerHTML += `<tr>
+        <td>
+          ${res[i].titulo}
+        </td>
+        <td>
+          ${res[i].categoria}
+        </td>
+        <td>
+        ${res[i].descripcion}
+        </td>
+        
+        <td>
+        <a id="${res[i].id}" class="btn btn-danger btn-sm delete">X</a>
+        </td>
+        <td>
+        <input type="radio"  id="${res[i].id}a" class="casilla" />Presentado
+        </td>
+        
+      </tr>`;
+
+    
+  }
+}
+ultimasTareas()

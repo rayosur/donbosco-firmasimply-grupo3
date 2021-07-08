@@ -29,7 +29,7 @@ async function crearTarea(e) {
     let tarea = {
         titulo: nombre,
         categoria:categoria,
-        descripcion: descripcion, //'Lorem Ipsum',
+        descripcion: descripcion, 
         fecha: fecha,
         estado: 0, // 0 pendiente, 1 completada
         user_id: Auth.getCoder().id, // esta funcion devuelve el id del coder logeado
@@ -79,6 +79,7 @@ function addtareaToList(tarea) {
       <td>${tarea.categoria}</td>  
       <td>${tarea.descripcion}</td>
       <td>${tarea.fecha}</td>
+     
       <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
       <td> <button id="add" class="success "> &#10004; </button> </td>
     `;

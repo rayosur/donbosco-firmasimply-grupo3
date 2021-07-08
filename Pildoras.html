@@ -61,35 +61,27 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="Tareas.html">
+                <a class="nav-link" href="tareas.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Tareas</span></a>
+            </li>
+            <li>
+                <button id="logout">salir</button>
             </li>
         </ul>
 
         <!-- contenedor a modificar -->
         <div class="container-fluid">
 
-            <h1 class="h3 mb-2 text-gray-800">LISTA DE PILDORAS CODERS F5</h1>
+            <h1 class="h3 mb-2 text-gray-800">DE PILDORAS CODERS F5</h1>
 
             <div class="card shadow mb-4">
-                <h1>Píldoras Presentadas</h1>
-                <div class="container mt-4">
-                    <div>
-                        <input type="number" id="number" value="0" class="number" readonly>
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Píldoras Pendientes</h6>
-                        </div>
-                    </div>
-                    <div>
-                        <input type="number" id="number2" value="0" class="number" readonly>
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Listado de Píldoras</h6>
-                        </div>
+               
+                  
                     </div>
                 </div>
                 <div class="container mt-4">
-                    <form id="book-form">
+                    <form id="form-pildora">
                         <div class="form-group">
                             <label for="nombre">Nombre de la píldora</label>
                             <input type="text" id="nombre" class="form-control">
@@ -125,7 +117,7 @@
                                 <th>Estado</th>
                             </tr>
                         </thead>
-                        <tbody id="book-list"></tbody>
+                        <tbody id="list-pildoras"></tbody>
                     </table>
                 </div>
 
@@ -175,6 +167,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="/assets/js/firmasimply/app.js"></script>
     <script type="module" src="/assets/js/firmasimply/pildoras.js"></script>
+    <script type="module" src="/assets/js/firmasimply/logout.js"></script>
 
 
 </body>

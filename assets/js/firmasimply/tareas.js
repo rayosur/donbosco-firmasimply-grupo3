@@ -27,7 +27,7 @@ async function crearTarea(e) {
     let fecha = new Date();
 
     let tarea = {
-        nombre: nombre,
+        titulo: nombre,
         descripcion: descripcion, //'Lorem Ipsum',
         fecha: fecha,
         estado: 0, // 0 pendiente, 1 completada

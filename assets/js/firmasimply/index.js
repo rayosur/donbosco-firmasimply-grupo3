@@ -58,3 +58,31 @@ async function consultarListadoFirmas2() {
 // // Consultar el número de firmas de hoy
  Asistencia.getNumFirmasHoy();
  
+ 
+// Funcionalidad mostrar Listado Tareas
+
+let mostrarTareas= await Tarea.getListadoTareas();
+console.log(mostrarTareas)
+
+let tareasPendientes=mostrarTareas.filter(a => { a.estado == 0 });
+console.log(tareasPendientes)
+
+let lista = document.getElementById('lista_tareasP')
+lista.innerHTML+='<li></li>', '<li></li>', '<li></li>', '<li></li>'
+Tarea.getListadoTareas();
+
+// Funcionalidad mostrar Listado Píldorasconst input = document.querySelector("input");
+
+let pildora = {
+  nombre: 'NPM',
+  descripcion: 'Lorem Ipsum',
+  fecha_presentacion: '2021-07-12',
+  estado: 0, // 0 pendiente, 1 presentada
+  user_id: Auth.getCoder().id, // esta funcion devuelve el id del coder logeado
+};
+
+Pildora.crearPildora(pildora);
+
+
+
+

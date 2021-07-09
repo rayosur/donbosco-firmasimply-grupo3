@@ -178,8 +178,17 @@ document.querySelector('#book-list').addEventListener('click', (e) => {
 
 
 // Borrar una tarea
-let idTarea = 2;
-Tarea.borrarTarea(idTarea);
+document.getElementById('book-list').addEventListener('click', borrarTarea)
+async function borrarTarea(e) {
+    if(e.target.classList == 'borrar') {
+        let idTarea = e.target.id;
+        await Tarea.borrarTarea(idTarea);
+        window.location.reload();
+    }
+	
+}
+// let idTarea = 2;
+// Tarea.borrarTarea(idTarea);
 
 // Marcar una tarea como completada o pendiente  // 1 completada, 0 pendiente
 //  idTarea = 2;

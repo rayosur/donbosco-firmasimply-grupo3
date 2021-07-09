@@ -1,13 +1,15 @@
+// import  borrarPildora  from './Modules/API/llamadasApi.js';
 import Auth from './Modules/Auth/Auth.js';
 import Pildora from './Modules/Pildora.js';
-  //Lista de Píldoras //Await es como espera
-  const list = document.getElementById('book-list');
-   async function getListadoPildoras(){
-     console.log('hola');
-    let res = await Pildora.getListadoPildoras();
-    for(var i=0;i<res.length;i++) {
-      console.log(res[i].name);
-      list.innerHTML += `<tr>
+//Lista de Píldoras //Await es como espera
+
+const list = document.getElementById('list-pildoras');
+async function getListadoPildoras() {
+  console.log('hola');
+  let res = await Pildora.getListadoPildoras();
+  for (var i = 0; i < res.length; i++) {
+    //console.log(res[i].name);
+    list.innerHTML += `<tr>
         <td>
           ${res[i].nombre}
         </td>

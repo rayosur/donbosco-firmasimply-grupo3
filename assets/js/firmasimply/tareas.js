@@ -8,7 +8,33 @@ let infoCoder = Auth.getCoder()
 
 
 async function getListadoTareas() {
-    console.log(await Tarea.getListadoTareas());
+    let listado = document.getElementById("book-list")
+    let res = await Tarea.getListadoTareas();
+    
+    for (var i = 0; i < res.length; i++) {
+      console.log(res[i].categoria);
+      listado.innerHTML += `<tr>
+          <td>
+            ${res[i].titulo}
+          </td>
+          <td>
+            ${res[i].categoria}
+          </td>
+          <td>
+          ${res[i].descripcion}
+          </td>
+          
+          <td>
+          <a id="${res[i].id}" class="btn btn-danger btn-sm delete">X</a>
+          </td>
+          <td>
+          <input type="radio"  id="${res[i].id}a" class="casilla" />Presentado
+          </td>
+          
+        </tr>`;
+  
+      
+    }
 }
 getListadoTareas();
 
@@ -17,19 +43,14 @@ document.querySelector('#editsubmit').addEventListener('click', crearTarea, fals
 
 async function crearTarea(e) {
     e.preventDefault();
-
-
-
-
     let nombre = document.querySelector('#nombre').value;
     let categoria = document.querySelector('#categoria ').value;
     let descripcion = document.querySelector('#descripcion').value;
     let fecha = new Date();
-
     let tarea = {
         titulo: nombre,
-        categoria:categoria,
-        descripcion: descripcion, 
+        categoria: categoria,
+        descripcion: descripcion,
         fecha: fecha,
         estado: 0, // 0 pendiente, 1 completada
         user_id: Auth.getCoder().id, // esta funcion devuelve el id del coder logeado
@@ -49,12 +70,8 @@ async function crearTarea(e) {
         Tarea.crearTarea(tarea);
         // Add Book to UI
         addtareaToList(tarea)
-
-
         // count
         count();
-
-
         // Add book to store
         // Store.addBook(book);
 
@@ -69,24 +86,42 @@ async function crearTarea(e) {
     }
 };
 
-function addtareaToList(tarea) {
-    const list = document.querySelector('#book-list');
 
-    const row = document.createElement('tr');
 
-    row.innerHTML = `
-      <td>${tarea.titulo}</td>
-      <td>${tarea.categoria}</td>  
-      <td>${tarea.descripcion}</td>
-      <td>${tarea.fecha}</td>
-     
-      <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
-      <td> <button id="add" class="success "> &#10004; </button> </td>
-    `;
+async function  addtareaToList(tarea) { 
+    
+    let listado = document.getElementById("book-list")
+    let res = await Tarea.getListadoTareas();
+    
+    for (var i = 0; i < res.length; i++) {
+      
+      listado.innerHTML += `<tr>
+          <td>
+            ${res[i].titulo}
+          </td>
+          <td>
+            ${res[i].categoria}
+          </td>
+          <td>
+          ${res[i].descripcion}
+          </td>
+          
+          <td>
+          <a id="${res[i].id}" class="btn btn-danger btn-sm delete">X</a>
+          </td>
+          <td>
+          <input type="radio"  id="${res[i].id}a" class="casilla" />Presentado
+          </td>
+          
+        </tr>`;
+  
+      
+    }
+  }
+  
+  
 
-    list.appendChild(row);
 
-}
 
 
 function doneBook(al) {
@@ -99,92 +134,6 @@ function doneBook(al) {
 
     } else {
         al.parentElement.parentElement.style.background = "rgb(118, 224, 85)";
-
-
     }
-
 }
 
-
-function deleteBook(el) {
-
-    if (el.classList.contains('delete')) {
-
-
-
-        el.parentElement.parentElement.remove();
-    }
-
-
-}
-
-function showAlert(message, className) {
-    const div = document.createElement('div');
-    div.className = `alert alert-${className}`;
-    div.appendChild(document.createTextNode(message));
-
-
-    const container = document.querySelector('.container');
-    const form = document.querySelector('#flexbox');
-    container.insertBefore(div, form);
-
-    // Vanish in 3 seconds
-    setTimeout(() => document.querySelector('.alert').remove(), 3000);
-}
-
-
-function clearFields() {
-    document.querySelector('#nombre').value = '';
-    document.querySelector('#categoria').value = '';
-    document.querySelector('#descripcion').value = '';
-}
-
-
-function count() {
-
-    let z = 1;
-    let yes = z++;
-    console.log(yes);
-
-
-}
-
-
-// Event: Remove a Book
-document.querySelector('#book-list').addEventListener('click', (e) => {
-
-
-    // check mark Done from UI
-    doneBook(e.target);
-
-
-
-    //console.log(e.target);
-
-
-
-    // Remove book from UI
-    deleteBook(e.target);
-
-
-
-    // Show success message
-    // UI.showAlert('Tarea eliminada', 'info');
-
-
-});
-
-
-
-
-// Borrar una tarea
-let idTarea = 2;
-Tarea.borrarTarea(idTarea);
-
-// Marcar una tarea como completada o pendiente  // 1 completada, 0 pendiente
-//  idTarea = 2;
-// let data = { estado: 1 };               
-// Tarea.marcarTarea(data, idTarea);
-
-
-Categoria.getListadoCategorias();
